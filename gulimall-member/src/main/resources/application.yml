@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.76.136:3306/gulimall_ums?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: gulimall-member
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: 192.168.76.136:8333
+
+  redis:
+    host: 192.168.76.136
+  session:
+    store-type: redis
+  zipkin:
+    sender:
+      type: web
+    discovery-client-enabled: false
+    base-url: http://192.168.76.136:9411/
+  sleuth:
+    sampler:
+      probability: 1
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+server:
+  port: 8000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

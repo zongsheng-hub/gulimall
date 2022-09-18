@@ -1,0 +1,46 @@
+#spring:
+#  datasource:
+#    username: root
+#    password: root
+#    url: jdbc:mysql://192.168.76.136:3306/gulimall_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+#  application:
+#    name: gulimall-coupon
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#
+#
+#mybatis-plus:
+#  mapper-locations: classpath:/mapper/**/*.xml
+#  global-config:
+#    db-config:
+#      id-type: auto
+#      logic-delete-value: 1
+#      logic-not-delete-value: 0
+#
+#server:
+#  port: 7000
+spring:
+  application:
+    name: gulimall-coupon
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 192.168.76.136:8333
+  zipkin:
+    base-url: http://192.168.76.136:9411/
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+feign:
+  sentinel:
+    enabled: true

@@ -1,0 +1,43 @@
+server:
+  port: 30000
+
+spring:
+  application:
+    name: gulimall-third-party
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+    sentinel:
+      transport:
+        dashboard: 192.168.76.136:8333
+    alicloud:
+      access-key: LTAI5tMZsfRZAx4q7pSzbj4Z
+      secret-key: aZpv4f5R6BWnkSBQy1BGXre9WLISWj
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+        bucket: gulimall-fuzs
+      sms:
+        host: https://fesms.market.alicloudapi.com
+        path: /sms/
+        appcode: b14f674581e4411c990e18bdfcfc35d6
+        skin: 1
+        sign: 1
+  zipkin:
+    sender:
+      type: web
+    discovery-client-enabled: false
+    base-url: http://192.168.76.136:9411/
+  sleuth:
+    sampler:
+      probability: 1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+
+
