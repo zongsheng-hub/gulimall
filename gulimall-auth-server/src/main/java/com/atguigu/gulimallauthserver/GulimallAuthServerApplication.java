@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 //准备二次提交
 //准备三次提交
+//hot-fix 提交
 @EnableRedisHttpSession
 @EnableFeignClients
 @EnableDiscoveryClient
