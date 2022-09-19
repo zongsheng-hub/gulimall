@@ -8,7 +8,9 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 //准备二次提交
 //准备三次提交
 //hot-fix 提交
+//master modify
 //hot-fix modify
+//git push
 @EnableRedisHttpSession
 @EnableFeignClients
 @EnableDiscoveryClient
