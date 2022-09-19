@@ -11,6 +11,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 //master modify
 //hot-fix modify
 //git push
+//git pull
 @EnableRedisHttpSession
 @EnableFeignClients
 @EnableDiscoveryClient
